@@ -1,0 +1,94 @@
+@import "../bourbon/bourbon"
+
+$color: #26e2d3
+$back_color_1: #222
+$back_color_2: #2f2e2e
+$text_color: white
+$bg_section: rgba(26, 9, 90, 0.8)
+$bg_mnu: rgb(62, 47, 113)
+
+html
+	body
+		color: $text_color
+		a
+			color: $color
+			&:hover
+				color: $color
+
+.hidden
+	display: none
+
+.top_mnu
+	background-color: $bg_mnu
+
+.preloader
+	background: $back_color_1
+	
+	.loader
+		border-top-color: $color
+
+.top_text
+	&::after
+		background-color: $color
+
+.top_mnu
+	ul
+		li
+			color: $text_color
+
+.button_main
+	color: $color
+	border: 2px solid $color
+
+.story_wrap,
+.knowledge,
+.mixup
+	background-color: $back_color_2
+
+section
+	h2
+		color: $color
+
+.watch
+	.top_wrap
+	background-color: $back_color_1
+	p:nth-child(even)
+		color: $color
+
+.head
+	.top_wrap
+		background-color: $bg_section
+
+.section_mixup
+	li.active
+		color: #fff
+		border-bottom: 1px solid $color
+
+.portfolio_item a
+	border: 1px solid $color
+
+.podrt_descr
+	background-color: #525151
+	h3
+		color: $color
+
+.feedback
+	background-color: $back_color_1
+
+.main_form
+	button
+		background: transparent
+		border: 2px solid $color
+		color: $color
+		border-radius: 6px
+
+.form-group
+	span
+		color: $color
+
+.contacts_icon
+	color: $color
+
+.main_footer
+	background: $back_color_2
+	color: #888
