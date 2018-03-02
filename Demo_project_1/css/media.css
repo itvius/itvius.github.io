@@ -7,12 +7,45 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
-
+	body header.head {
+		min-height: 850px;
+	}
+	body p {
+		text-align: center;
+	}
+	.story_descr {
+		text-align: center;
+	}
+	.story_left {
+		padding-bottom: 50px;
+	}
+	.top_text {
+		margin-bottom: 50px;
+	}
+	.personal_info {
+		text-align: center;
+	}
+	.watch ul,
+	.watch ul li {
+		text-align: center;
+	}
+	.top_wrap_padding {
+		padding-bottom: 75px;
+	}
+	.contact_box h3 {
+		text-align: center;
+	}
+	.contact_box .contacts_icon {
+		text-align: center;
+	}
 }
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
 
+	.top_mnu ul {
+		display: none;
+	}
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {

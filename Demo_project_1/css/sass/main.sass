@@ -14,13 +14,15 @@ html
 	p
 		letter-spacing: 1px
 		text-align: left
+	ul,
+	li
+		list-style-type: none
+		padding: 0
+		margin: 0
+		text-transform: uppercase
+	button
+		outline: none
 
-ul,
-li
-	list-style-type: none
-	padding: 0
-	margin: 0
-	text-transform: uppercase
 
 .preloader
 	position: fixed
@@ -58,7 +60,7 @@ li
 
 .head,
 .watch
-	min-height: 900px
+	min-height: 1000px
 	position: relative!important
 	padding-top: 0
 
@@ -86,7 +88,6 @@ li
 		float: right
 
 section,
-	padding: 70px 0 60px
 	position: relative
 	h2
 		font-weight: bold
@@ -140,6 +141,8 @@ section,
 
 .story_wrap
 	z-index: 2
+	.story_descr
+		padding: 100px 0 100px
 
 .watch
 
@@ -158,10 +161,13 @@ section,
 		text-align: left
 		font-size: 16px
 		letter-spacing: 2px 
+	a
+		&:focus
+			outline: none
 
 	.social_wrap
 		li
-			float: left
+			display: inline-block
 			font-size: 25px
 			margin-right: 5px
 		
@@ -178,7 +184,7 @@ section,
 	text-align: left
 
 .top_wrap
-		padding: 70px 0 0
+		padding: 100px 0 100px
 		text-align: center
 		h3
 			margin-bottom: 35px
@@ -289,8 +295,6 @@ section,
 
 .feedback
 	padding: 0
-	.top_wrap
-		padding: 70px 0 70px
 
 .main_form
 	button
@@ -334,11 +338,10 @@ section,
 		max-width: 100%
 
 .main_footer
-	padding: 40px 0
+	padding: 55px 0
 	.social_wrap,
 	li
 		float: right
 		display: inline-block
 		padding-right: 10px
 		font-size: 20px
-		

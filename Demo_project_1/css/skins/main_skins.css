@@ -9,7 +9,16 @@ html body {
   display: none; }
 
 .top_mnu {
-  background-color: #3e2f71; }
+  background-color: #312364; }
+  .top_mnu a {
+    color: #fff !important; }
+    .top_mnu a:hover {
+      color: #26e2d3 !important;
+      text-decoration: none; }
+    .top_mnu a.active {
+      color: #26e2d3 !important; }
+    .top_mnu a:link {
+      text-decoration: none; }
 
 .preloader {
   background: #222; }
@@ -18,9 +27,6 @@ html body {
 
 .top_text::after {
   background-color: #26e2d3; }
-
-.top_mnu ul li {
-  color: white; }
 
 .button_main {
   color: #26e2d3;

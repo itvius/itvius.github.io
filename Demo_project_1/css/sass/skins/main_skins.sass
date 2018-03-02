@@ -5,7 +5,7 @@ $back_color_1: #222
 $back_color_2: #2f2e2e
 $text_color: white
 $bg_section: rgba(26, 9, 90, 0.8)
-$bg_mnu: rgb(62, 47, 113)
+$bg_mnu: rgb(49, 35, 100)
 
 html
 	body
@@ -20,7 +20,17 @@ html
 
 .top_mnu
 	background-color: $bg_mnu
+	a
+		color: #fff!important
+		&:hover
+			color: $color!important
+			text-decoration: none
+		&.active
+			color: $color!important
+		&:link
+			text-decoration: none
 
+			
 .preloader
 	background: $back_color_1
 	
@@ -30,12 +40,7 @@ html
 .top_text
 	&::after
 		background-color: $color
-
-.top_mnu
-	ul
-		li
-			color: $text_color
-
+					
 .button_main
 	color: $color
 	border: 2px solid $color
