@@ -1,24 +1,40 @@
 $(document).ready(function() {
 
-		$(document).on("scroll", onScroll);
- 
-		$('.top_mnu').on('click','a', function (e) {
-			e.preventDefault();
-			/*$(document).off("scroll");*/
- 
-			/*$('a').each(function () {
-				$(this).removeClass('active');
-			})
-			$(this).addClass('active');*/
- 
-			var id  = $(this).attr('href'),
-            top = $(id).offset().top;
-			$('html, body').animate({scrollTop: top-60}, 
-				700, 'swing', function () {
+	$(".sandwich, .menu_item").click(function() {
+		$(".sandwich").toggleClass("active");
+	});
+
+	$(".mnu_top ul a").click(function() {
+		$(".mnu_top").fadeOut(600);
+		$(".sandwich").toggleClass("active");
+		$(".top_text").css("opacity", "1");
+	}).append("<span>");
+
+	$(".toggle_mnu").click(function() {
+		if ($(".mnu_top").is(":visible")) {
+			$(".top_text").css("opacity", "1");
+			$(".mnu_top").fadeOut(600);
+		} else {
+			$(".top_text").css("opacity", ".1");
+			$(".mnu_top").fadeIn(600);
+		};
+	});
+
+	$(document).on("scroll", onScroll);
+
+	var menu = document.querySelectorAll('.top_mnu, .mnu_top');
+
+	$(menu).on('click','a', function (e) {
+		e.preventDefault();
+
+		var id  = $(this).attr('href'),
+		top = $(id).offset().top;
+		$('html, body').animate({scrollTop: top-60}, 
+			700, 'swing', function () {
 				$(document).on("scroll", onScroll);
 			});
-		});
- 
+	});
+
 	function onScroll(event){
 		var scrollPosition = $(document).scrollTop()+90;
 		$('.top_mnu a').each(function () {
@@ -29,14 +45,14 @@ $(document).ready(function() {
 				currentLink.addClass("active");
 			}
 		});
-	}
+	};
 	
-    $("#header").on("click","button",  function (event) {
-        event.preventDefault();
-        var id  = $(this).attr('href'),
-            top = $(id).offset().top;
-        $('body,html').animate({scrollTop: top - 60}, 900);
-    });
+	$("#header").on("click","button",  function (event) {
+		event.preventDefault();
+		var id  = $(this).attr('href'),
+		top = $(id).offset().top;
+		$('body,html').animate({scrollTop: top - 60}, 900);
+	});
 
 	var containerEl = document.querySelector('#mixup_grid')
 
@@ -78,5 +94,5 @@ document.body.onload = function() {
 		if(!preloader.classList.contains('done')) {
 			preloader.classList.add('done');
 		}
-	}, 1000);
+	}, 300);
 };

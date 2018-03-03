@@ -1,63 +1,3 @@
-/*==========  Desktop  ==========*/
-
-/* Large Devices, Wide Screens */
-@media only screen and (max-width : 1200px) {
-
-}
-
-/* Medium Devices, Desktops */
-@media only screen and (max-width : 992px) {
-	body header.head {
-		min-height: 850px;
-	}
-	body p {
-		text-align: center;
-	}
-	.story_descr {
-		text-align: center;
-	}
-	.story_left {
-		padding-bottom: 50px;
-	}
-	.top_text {
-		margin-bottom: 50px;
-	}
-	.personal_info {
-		text-align: center;
-	}
-	.watch ul,
-	.watch ul li {
-		text-align: center;
-	}
-	.top_wrap_padding {
-		padding-bottom: 75px;
-	}
-	.contact_box h3 {
-		text-align: center;
-	}
-	.contact_box .contacts_icon {
-		text-align: center;
-	}
-}
-
-/* Small Devices, Tablets */
-@media only screen and (max-width : 768px) {
-
-	.top_mnu ul {
-		display: none;
-	}
-
-/* Extra Small Devices, Phones */
-@media only screen and (max-width : 480px) {
-
-}
-
-/* Custom, iPhone Retina */
-@media only screen and (max-width : 320px) {
-
-}
-
-
 /*==========  Mobile  ==========*/
 
 /* Custom, iPhone Retina */
@@ -72,7 +12,9 @@
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px) {
-
+	.toggle_mnu {
+		display: none!important;
+	}
 }
 
 /* Medium Devices, Desktops */
@@ -82,5 +24,51 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px) {
+
+}
+
+/*==========  Desktop  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+	body header.head {
+		min-height: 850px;
+	}
+	body p,
+	.story_descr,
+	.personal_info,
+	.watch ul,
+	.watch ul li,
+	.contact_box h3,
+	.contact_box .contacts_icon {
+		text-align: center;
+	}
+	.story_left,
+	.top_text {
+		margin-bottom: 50px;
+	}
+	.top_wrap_padding {
+		padding-bottom: 75px;
+	}
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	.top_mnu ul {
+		display: none;
+	}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
 
 }
