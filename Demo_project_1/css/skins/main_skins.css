@@ -25,7 +25,10 @@ html body {
   .preloader .loader {
     border-top-color: #26e2d3; }
 
-.top_text::after {
+/* .top_text
+ * &::after
+ * 	background-color: $color */
+.row_color {
   background-color: #26e2d3; }
 
 .button_main {
