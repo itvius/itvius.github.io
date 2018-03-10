@@ -9,8 +9,10 @@
 <body>
 
 <div class="content_wrap">
-	<input id="urlPath" type="text" required>
-	<input id="comment" type="text" required>
+	<div>Введите URL изображения</div>
+	<textarea id="urlPath" type="text" required></textarea>
+	<div>Введите комментарий</div>
+	<textarea id="comment" type="text" required></textarea><br>
 	<button id="img_add" type="submit">Добавить</button>
 	<div id="carousel" class="s_carousel">
 
@@ -21,10 +23,10 @@
 	<div class="modal_cont">
 		<span id="close" class="close">&times;</span>
 		<div id="m_cont"></div>
-		<img id="img_modal" src="">
+		<img id="img_modal" class="modal_img" src="">
 	</div>
 </div>
-
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 <script src="js/common.js"></script>
 </body>
 </html>
