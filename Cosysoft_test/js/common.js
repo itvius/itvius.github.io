@@ -1,17 +1,17 @@
-var element = document.getElementById('carousel');
-var add = document.getElementById('img_add');
-var popup = document.getElementById('popup');
-var span = document.getElementById('close');
-var commentWrap = document.querySelector('button_edit');
-var urlPath = document.getElementById('urlPath');
-var regexps = /https:/gi;
-var regexp = /http:/gi;
+var element = document.getElementById('carousel'),
+add = document.getElementById('img_add'),
+popup = document.getElementById('popup'),
+span = document.getElementById('close'),
+commentWrap = document.querySelector('button_edit'),
+urlPath = document.getElementById('urlPath'),
+regexps = /https:/gi,
+regexp = /http:/gi;
 
 add.onclick = function () {
     console.log(urlPath.value);
     if(urlPath.value == ''){
         urlPath.value = 'Введите URL изображения';
-        urlPath.style.border = '2px solid red';
+        urlPath.style.border = '1px solid red';
     } else if (!urlPath.value.match(regexps) && !urlPath.value.match(regexp)) {
         urlPath.value = 'Вы всё ещё не ввели URL изображения';
     } else {
