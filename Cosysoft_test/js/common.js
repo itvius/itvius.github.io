@@ -14,6 +14,7 @@ add.onclick = function () {
         urlPath.style.border = '1px solid red';
     } else if (!urlPath.value.match(regexps) && !urlPath.value.match(regexp)) {
         urlPath.value = 'Вы всё ещё не ввели URL изображения';
+        urlPath.style.border = '1px solid red';
     } else {
         urlPath.style.border = '';
         var divImg = document.createElement('div');
@@ -53,6 +54,9 @@ add.onclick = function () {
         link.insertBefore(img, link.firstChild);
         divImg.appendChild(comment);
         divImg.appendChild(editButton);
+
+        urlPath.value = '';
+        document.getElementById('comment').value = '';
 
     }
 }
