@@ -3,12 +3,28 @@ add = document.getElementById('img_add'),
 popup = document.getElementById('popup'),
 span = document.getElementById('close'),
 commentWrap = document.querySelector('button_edit'),
+commentArea = document.getElementById('comment'),
 urlPath = document.getElementById('urlPath'),
 regexps = /https:/gi,
 regexp = /http:/gi;
 
-add.onclick = function () {
-    console.log(urlPath.value);
+add.onclick = function addd(){
+    addDiv(urlPath, commentArea);
+};
+
+span.onclick = function() {
+    popup.style.display = 'none';
+    document.body.style.overflow = '';
+}
+
+window.onclick = function(event) {
+    if(event.target == popup) {
+        popup.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+}
+
+function addDiv(urlPath, commentArea) {
     if(urlPath.value == ''){
         urlPath.value = 'Введите URL изображения';
         urlPath.style.border = '1px solid red';
@@ -37,7 +53,7 @@ add.onclick = function () {
 
         var comment = document.createElement('p');
         comment.className = 'comment_wrap';
-        comment.innerHTML = document.getElementById('comment').value;
+        comment.innerHTML = commentArea.value;
 
         var editButton = document.createElement('button');
         editButton.className = 'button_edit';
@@ -58,16 +74,26 @@ add.onclick = function () {
         urlPath.value = '';
         document.getElementById('comment').value = '';
 
+        var obj = {
+            urlPath: img.src,
+            commentArea: comment.innerHTML
+        };
+
+        var serialObj = JSON.stringify(obj);
+
+        localStorage.setItem('img1', serialObj);
+
     }
-}
-span.onclick = function() {
-    popup.style.display = 'none';
-    document.body.style.overflow = '';
 }
 
-window.onclick = function(event) {
-    if(event.target == popup) {
-        popup.style.display = 'none';
-        document.body.style.overflow = '';
-    }
+
+
+/*if (localStorage.getItem('img1') !== null){
+    var returnObj = JSON.parse(localStorage.getItem('img1'));
+    addDiv(returnObj.urlPath, returnObj.commentArea);
+}*/
+/*localStorage.clear();*/
+window.onload = function() {
+    var returnObj = JSON.parse(localStorage.getItem('img1'));
+    /*addDiv(returnObj.urlPath, returnObj.commentArea);*/
 }
