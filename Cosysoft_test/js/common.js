@@ -1,12 +1,12 @@
 var element = document.getElementById('carousel'),
-add = document.getElementById('img_add'),
-popup = document.getElementById('popup'),
-span = document.getElementById('close'),
-commentWrap = document.querySelector('button_edit'),
-commentArea = document.getElementById('comment'),
-urlPath = document.getElementById('urlPath'),
-regexps = /https:/gi,
-regexp = /http:/gi;
+    add = document.getElementById('img_add'),
+    popup = document.getElementById('popup'),
+    span = document.getElementById('close'),
+    commentWrap = document.querySelector('button_edit'),
+    commentArea = document.getElementById('comment'),
+    urlPath = document.getElementById('urlPath'),
+    regexps = /https:/gi,
+    regexp = /http:/gi;
 
 add.onclick = function addd(){
     addDiv(urlPath, commentArea);
