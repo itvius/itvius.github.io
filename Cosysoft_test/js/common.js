@@ -5,10 +5,11 @@ span = document.getElementById('close'),
 commentWrap = document.querySelector('button_edit'),
 commentArea = document.getElementById('comment'),
 urlPath = document.getElementById('urlPath'),
+clearDiv = document.getElementById('clear'),
 regexps = /https:/gi,
-regexp = /http:/gi;
-
-var obj = [];
+regexp = /http:/gi,
+p = 0,
+obj = [];
 
 add.onclick = function addd(){
     addDiv(urlPath, commentArea);
@@ -26,7 +27,7 @@ window.onclick = function(event) {
     }
 }
 
-function addDiv(urlPath, commentArea) {
+function addDiv(urlPath, commentArea, ident) {
     if(urlPath.value == ''){
         urlPath.value = 'Введите URL изображения';
         urlPath.style.border = '1px solid red';
@@ -64,6 +65,14 @@ function addDiv(urlPath, commentArea) {
             var editComment = prompt('Введите комментарий', '');
             if (editComment !== null) {
                 comment.innerHTML = editComment;
+                if (divImg.id == returnObj[divImg.id].id) {
+                    returnObj[divImg.id].commentArea = editComment;
+                }
+
+                obj[divImg.id].commentArea = returnObj[divImg.id].commentArea;
+
+                var serialObj = JSON.stringify(obj);
+                localStorage.setItem('mass_img', serialObj);
             }
         }
 
@@ -73,23 +82,21 @@ function addDiv(urlPath, commentArea) {
         divImg.appendChild(comment);
         divImg.appendChild(editButton);
 
-        obj.push({
-            urlPath: img.src,
-            commentArea: comment.innerHTML
-        })
+        addWrap(img.src, comment.innerHTML);
 
-        var serialObj = JSON.stringify(obj);
-        localStorage.setItem('mass_img', serialObj);
+        var returnObj = JSON.parse(localStorage.getItem('mass_img'));
+
+        divImg.id = returnObj[p].id;
 
         urlPath.value = '';
         commentArea.value = '';
-
     }
 }
 
-function addFromJSON(urlPath,commentArea){
+function addFromJSON(urlPath, commentArea, ident){
     var divImg = document.createElement('div');
-    divImg.className = 'img_wrap';
+    divImg.className = 'img_wrap ';
+    divImg.id = ident;
 
     var link = document.createElement('a');
     link.className = 'img_link';
@@ -118,10 +125,17 @@ function addFromJSON(urlPath,commentArea){
         if (editComment !== null) {
             comment.innerHTML = editComment;
 
-            /*var returnObj = JSON.parse(localStorage.getItem('mass_img'));
-            console.log(returnObj);*/
-        }
+            var returnObj = JSON.parse(localStorage.getItem('mass_img'));
 
+            if (divImg.id == returnObj[divImg.id].id) {
+                returnObj[divImg.id].commentArea = editComment;
+            }
+
+            obj[divImg.id].commentArea = returnObj[divImg.id].commentArea;
+
+            var serialObj = JSON.stringify(obj);
+            localStorage.setItem('mass_img', serialObj);
+        }
     }
 
     element.insertBefore(divImg, element.firstChild);
@@ -130,24 +144,36 @@ function addFromJSON(urlPath,commentArea){
     divImg.appendChild(comment);
     divImg.appendChild(editButton);
 
-    obj.push({
-        urlPath: img.src,
-        commentArea: comment.innerHTML
-    })
-
-    var serialObj = JSON.stringify(obj);
-    localStorage.setItem('mass_img', serialObj);
+    addWrap(img.src, comment.innerHTML);
 
     urlPath.value = '';
     commentArea.value = '';
 }
 
-window.onload = function() {
-    var returnObj = JSON.parse(localStorage.getItem('mass_img'));
-    console.log(returnObj);
-    var key = returnObj.forEach(function(item,i,returnObj) {
-        addFromJSON(returnObj[i].urlPath, returnObj[i].commentArea);
-    });
+function addWrap(img, comment) {
+    for(; p < obj.length; p++){}
+
+        obj.push({
+            id: p,
+            urlPath: img,
+            commentArea: comment
+        })
+
+    var serialObj = JSON.stringify(obj);
+    localStorage.setItem('mass_img', serialObj);
+
 }
 
-/*localStorage.clear();*/
+window.onload = function() {
+    if (localStorage.length > 0){
+        var returnObj = JSON.parse(localStorage.getItem('mass_img'));
+        var key = returnObj.forEach(function(item,i,returnObj) {
+            addFromJSON(returnObj[i].urlPath, returnObj[i].commentArea, returnObj[i].id);
+        });
+    }
+}
+
+clearDiv.onclick = function() {
+    localStorage.clear();
+    window.location.reload();
+}
