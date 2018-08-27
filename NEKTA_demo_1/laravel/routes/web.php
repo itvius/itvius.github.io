@@ -17,9 +17,11 @@ Route::get('/', function() {
 });
 
 
-Route::get('/form', 'FormController@index');
-Route::post('/form', 'Ajax\ContactController@send');
+/*Route::get('/form', 'FormController@index');*/
+Route::post('/form', 'Ajax\ContactController@post');
 Route::get('/form', 'TableController@index');
+Route::get('/post','DataController@postRequest');
+/*Route::get('get','DataController@getRequest');*/
 
 Auth::routes();
 

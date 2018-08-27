@@ -30,6 +30,7 @@
                 <th scope="col">Name</th>
                 <th scope="col">E-mail</th>
                 <th scope="col">Text</th>
+                <th scope="col">File</th>
             </tr>
             </thead>
             <tbody>
@@ -42,6 +43,8 @@
                 <td>{{ $form->email }}</td>
 
                 <td>{{ $form->text }}</td>
+
+                <td>{{ $form->file }}</td>
 
             </tr>
             @endforeach
