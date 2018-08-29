@@ -17,11 +17,15 @@ Route::get('/', function() {
 });
 
 
-/*Route::get('/form', 'FormController@index');*/
-Route::post('/form', 'Ajax\ContactController@post');
-Route::get('/form', 'TableController@index');
-Route::get('/post','DataController@postRequest');
+/*Route::get('/form', 'grocery' /*'FormController@index')->name('form');
+Route::post('/form', 'Ajax\ContactController@post');*/
+
+Route::view('/grocery', 'grocery');
+Route::post('/grocery', 'GroceryController@store');
+
+/*Route::get('/form', 'TableController@show');*/
 /*Route::get('get','DataController@getRequest');*/
+/*Route::get('/post','DataController@postRequest');*/
 
 Auth::routes();
 

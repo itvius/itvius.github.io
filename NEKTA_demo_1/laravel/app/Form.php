@@ -8,7 +8,7 @@ class Form extends Model
 {
     protected $fillable = [
 
-        'title', 'text'
+        //
 
     ];
 }

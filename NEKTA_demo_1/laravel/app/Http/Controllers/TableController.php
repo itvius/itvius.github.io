@@ -11,7 +11,11 @@ class TableController extends Controller
         /*$TableData = forms::all();*/
 
         $forms = DB::select('select * from forms');
+        $data =['forms' => $forms];
 
-        return view('form', ['forms' => $forms]);
+        return view('form.form', $data);
+       /* return view('form', ['forms' => $forms]);*/
+
+        /*return response()->json(['forms' => $forms]);*/
     }
 }
