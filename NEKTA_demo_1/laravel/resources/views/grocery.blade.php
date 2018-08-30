@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <form method="POST" id="contactform" action="/grocery" enctype="multipart/form-data">
+            <form method="POST" id="contactform" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="First name" id="name" name="name">
@@ -21,43 +21,9 @@
                 <button type="submit" class="btn btn-primary" id="ajaxSubmit">Submit</button>
             </form>
 
-            <script src="http://code.jquery.com/jquery-3.3.1.min.js"
-                    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-                    crossorigin="anonymous">
-            </script>
-
-            <script>
-
-                $(document).ready(function(){
-                    $('#ajaxSubmit').click('submit', function(e){
-                        e.preventDefault();
-
-                        var formData = {
-                          name : $('#name').val(),
-                          email: $('#email').val(),
-                          text: $('#text').val(),
-                        };
-
-                        $.ajaxSetup({
-                            headers: {
-                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                            }
-                        });
-
-                        $.ajax({
-                            type: 'POST',
-                            url: '/grocery',
-                            data: formData,
-                            success: function(result){
-                                console.log(result);
-                                console.log(formData);
-                            }
-                        });
-                    });
-                });
-            </script>
-
-           {{-- <table class="table">
+            <table class="table">
+                <script>
+                </script>
                 <thead>
                 <tr>
                     <th scope="col">id</th>
@@ -67,23 +33,24 @@
                     <th scope="col">File</th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody id="forms">
+                <?php $forms = DB::select('select * from forms'); ?>
                 @foreach ($forms as $form)
                     <tr>
                         <th scope="row">{{ $form->id }}</th>
 
-                        <td>{{ $form->name }}</td>
+                        <td>{{ $form->name}}</td>
 
                         <td>{{ $form->email }}</td>
 
                         <td>{{ $form->text }}</td>
 
-                        --}}{{--<td>{{ $form->file }}</td>--}}{{--
+                         <td>{{ $form->file }}</td>
 
                     </tr>
                 @endforeach
                 </tbody>
-            </table>--}}
+            </table>
         </div>
     </div>
 

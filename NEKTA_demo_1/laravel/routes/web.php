@@ -21,7 +21,10 @@ Route::get('/', function() {
 Route::post('/form', 'Ajax\ContactController@post');*/
 
 Route::view('/grocery', 'grocery');
-Route::post('/grocery', 'GroceryController@store');
+Route::post('/grocery', 'GroceryController@comment');
+/*Route::get('/grocery/getdata', 'GroceryGetController@getdata');*/
+
+/*Route::get('/grocery/getdata', 'AjaxdataController@getdata')-name('ajaxdata.getdata');*/
 
 /*Route::get('/form', 'TableController@show');*/
 /*Route::get('get','DataController@getRequest');*/
