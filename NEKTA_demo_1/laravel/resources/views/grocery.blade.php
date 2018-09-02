@@ -6,9 +6,10 @@
             <form method="POST" id="contactform" enctype="multipart/form-data" class="py-4">
                 {{ csrf_field() }}
                 <div class="form-group">
+                    <label for="exampleInputName">Ваше имя</label>
                     <input type="text" class="form-control" placeholder="ФИО" id="name" name="name" required>
 
-                    <label for="exampleInputEmail1" class="pt-2">Email address</label>
+                    <label for="exampleInputEmail1" class="pt-2">Email</label>
                     <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Введите E-mail" id="email" name="email" required>
                     {{--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>--}}
 
