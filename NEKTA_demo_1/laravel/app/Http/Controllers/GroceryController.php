@@ -16,8 +16,6 @@ class GroceryController extends Controller
         $name = $_POST['name'];
         $email = $_POST['email'];
         $text = $_POST['text'];
-       /* $file = $_POST['file'];*/
-
 
         /*$extension = $input->file('file');*/
         $extension = $input->file('file')->getClientOriginalExtension();
@@ -34,48 +32,13 @@ class GroceryController extends Controller
         );
 
         $result = DB::table('forms')->insert($data);
-        if ($result) {
+        if ($result === true) {
             return redirect('grocery')->with($result);
-           /* return response()->json($result/*[
-                'status' => 'success',
-                'name' => $name,
-                'email' => $email,
-                'text' => $text
-            ]*);*/
         }
         else {
             return response()->json([
                 'status' => 'error'
             ]);
         }
-
-
-
-        /*$add_product = DB::table("forms")->insert([
-            'name' => $request->name,
-            'email' => $request->email,
-            'text' => $request->text
-            /*'file' => $dir . $filename
-        ]);*/
-
-        /*$data = [
-            'name' => 'name',
-            'email' => 'email',
-            'text' => 'text'
-            ];*/
-
-       /* $forms = DB::select('select * from forms');
-
-        return response()->json(['forms' => $forms]);*/
-        /*return json_encode(['forms' => $forms]);*/
-
-        /*$forms = DB::select('select * from forms');
-
-       return view('grocery', ['forms' => $forms]);*/
-
-        /*return response()->json(['forms' => $forms]);*/
-
-        /*return View::make('grocery')->with('forms', $forms);*/
-        /*return response()->json(view('grocery', ['forms' => $forms]));*/
     }
 }

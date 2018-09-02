@@ -7,7 +7,7 @@
     </script>
 <div class="container">
     <div class="row justify-content-center">
-        <form method="post" id="contactform" enctype="multipart/form-data">
+        <form class="py-3" method="post" id="contactform" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="First name" id="name" name="name">
@@ -20,7 +20,7 @@
                 <textarea class="form-control"  rows="3" id="text" name="text"></textarea>
 
                 <label for="exampleFormControlFile1">Example file input</label>
-                <input type="file" class="form-control-file" id="file" multiple="multiple" name="file">
+                <input type="file" class="form-control-file" id="file" name="file[]" :multiple="multiple">
             </div>
             <button type="submit" class="btn btn-primary" id="ajaxSubmit">Submit</button>
         </form>
