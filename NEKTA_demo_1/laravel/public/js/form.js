@@ -9,14 +9,21 @@ $(document).ready(function(){
             name : $('#name').val(),
             email: $('#email').val(),
             text: $('#text').val(),
-            /*file: $('#file').val()*/
+           /* file: $('#file').val()*/
 
         };
 
-        var file_data = $('#file').prop('file')[];
+       /* var files = $('#file').val();*/
+
+
+        var file_data = $('#file').prop('file').[];
 
         var form_data = new FormData();
         form_data.append('file', file_data);
+
+       /* for (var i = files.length - 1; i >= 0; i--) {
+            formData.append('files[]', files[i]);
+        }*/
 
         $.ajaxSetup({
             headers: {

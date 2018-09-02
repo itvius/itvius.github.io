@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 /*use Illuminate\Http\Request;*/
 use GuzzleHttp\Client;
+use function GuzzleHttp\Promise\exception_for;
 use GuzzleHttp\Psr7\hash;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
@@ -16,32 +17,58 @@ class GuzzleController extends Controller
 
 
         $client = new Client([
-            'base_uri' => "https://preview.nekta.cloud/"
+            'base_uri' => "https://preview.nekta.cloud/",
+            ['cookies' => true ]
         ]);
 
         $userEmail = "fullstack@nekta.tech";
         $userPswd = "fullstack";
 
-
-
         $post = [
             'authKey' => md5($userEmail . $userPswd)
         ];
 
-        $response = $client->request('POST', 'api.login', $post);
+        $send_headers = [
+            'Accept' => 'Accept: application/json'
+        ];
 
-        return $response;
+            $json_response = $client->request('post', '/api.login', $post, $send_headers);
 
-        /*$json_response = $client->request('POST','/api.login', $post);
+            if ($json_response['login'] === true) {
 
-        if ($json_response['login'] === true) {
+                /*$devices = $client->request('/api.devices.all');
 
-            $devices = $client->request('POST','/api.devices.all');
+                return $devices->getBody();*/
 
-            return $devices->getBody();
-        } else {
-            return 'fail';
-        }*/
+                return 'ура';
+            } else {
+            return 'ff';
+            }
+
+                /* return 'ура';*
+             } else {
+                 return 'fail';
+             }
+             } catch (RequestException $e) {
+                 echo Psr7\str($e->getRequest());
+                 if ($e->hasResponse()) {
+                     echo Psr7\str($e->getResponse());
+                 }
+             }
+
+            /* $response = $client->request('POST', '/api.login', $post);
+
+            /* $json_response = $client->request('POST','/api.login', $post);*
+
+             if ($response['login'] === true) {
+
+                 $devices = $client->request('/api.devices.all');
+
+                 return $devices->getBody();
+                /* return 'ура';*
+             } else {
+                 return 'fail';
+             }*/
 
         /*dd($response);*/
 

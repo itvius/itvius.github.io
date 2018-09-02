@@ -17,7 +17,7 @@
                     <textarea class="form-control"  rows="3" id="text" name="text" required></textarea>
 
                     {{--<label for="exampleFormControlFile1">Example file input</label>--}}
-                    <input type="file" class="form-control-file pt-2" id="file" multiple="multiple" name="file" required>
+                    <input type="file" class="form-control-file pt-2" id="file" multiple="true" name="file[]" required>
                 </div>
                 <button type="submit" class="btn btn-primary" id="ajaxSubmit">Submit</button>
             </form>
