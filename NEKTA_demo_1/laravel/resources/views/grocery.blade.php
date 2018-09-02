@@ -6,17 +6,17 @@
             <form method="POST" id="contactform" enctype="multipart/form-data" class="py-4">
                 {{ csrf_field() }}
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="ФИО" id="name" name="name">
+                    <input type="text" class="form-control" placeholder="ФИО" id="name" name="name" required>
 
                     <label for="exampleInputEmail1" class="pt-2">Email address</label>
-                    <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Введите E-mail" id="email" name="email">
+                    <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Введите E-mail" id="email" name="email" required>
                     {{--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>--}}
 
                     <label for="exampleFormControlTextarea1" class="pt-2">Текст сообщения</label>
-                    <textarea class="form-control"  rows="3" id="text" name="text"></textarea>
+                    <textarea class="form-control"  rows="3" id="text" name="text" required></textarea>
 
                     {{--<label for="exampleFormControlFile1">Example file input</label>--}}
-                    <input type="file" class="form-control-file pt-2" id="file" multiple="multiple" name="file">
+                    <input type="file" class="form-control-file pt-2" id="file" multiple="multiple" name="file" required>
                 </div>
                 <button type="submit" class="btn btn-primary" id="ajaxSubmit">Submit</button>
             </form>
