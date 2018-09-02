@@ -19,8 +19,7 @@ class CreateFormsTable extends Migration
             $table->string('email');
             $table->string('text');
             $table->string('file');
-            /*$table->string('name');*/
-            $table->timestamps();
+            /*$table->timestamps();*/
         });
     }
 

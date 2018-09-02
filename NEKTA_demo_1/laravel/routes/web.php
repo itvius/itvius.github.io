@@ -22,6 +22,8 @@ Route::post('/form', 'Ajax\ContactController@post');*/
 
 Route::view('/grocery', 'grocery');
 Route::post('/grocery', 'GroceryController@comment');
+Route::get('/guzzle', 'GuzzleController@getData');
+
 /*Route::get('/grocery/getdata', 'GroceryGetController@getdata');*/
 
 /*Route::get('/grocery/getdata', 'AjaxdataController@getdata')-name('ajaxdata.getdata');*/
