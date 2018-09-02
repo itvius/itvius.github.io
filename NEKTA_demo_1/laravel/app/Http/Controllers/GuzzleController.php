@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+/*use Illuminate\Http\Request;*/
 use GuzzleHttp\Client;
+use GuzzleHttp\Psr7\hash;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
-/*use GuzzleHttp\Psr7\Request;*/
+use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Exception\RequestException;
 class GuzzleController extends Controller
 {
@@ -21,13 +22,17 @@ class GuzzleController extends Controller
         $userEmail = "fullstack@nekta.tech";
         $userPswd = "fullstack";
 
+
+
         $post = [
             'authKey' => md5($userEmail . $userPswd)
         ];
 
-       /* $response = $client->request('POST', 'api.login', $post);*/
+        $response = $client->request('POST', 'api.login', $post);
 
-        $json_response = $client->request('POST','/api.login', $post);
+        return $response;
+
+        /*$json_response = $client->request('POST','/api.login', $post);
 
         if ($json_response['login'] === true) {
 
@@ -36,7 +41,7 @@ class GuzzleController extends Controller
             return $devices->getBody();
         } else {
             return 'fail';
-        }
+        }*/
 
         /*dd($response);*/
 

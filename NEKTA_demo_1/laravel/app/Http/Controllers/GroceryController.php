@@ -21,7 +21,7 @@ class GroceryController extends Controller
 
         /*$extension = $input->file('file');*/
         $extension = $input->file('file')->getClientOriginalExtension();
-        $dir = '/assets/files/';
+        $dir = 'assets/files/';
         $filename = uniqid().'_'.time().'_'.date('Ymd').'.'.$extension;
         $input->file('file')->move($dir, $filename);
 
@@ -30,7 +30,7 @@ class GroceryController extends Controller
             'name' => $input['name'],
             'email' => $input['email'],
             'text' => $input['text'],
-            'file' => $dir . $filename
+            'file' => '/' . $dir . $filename
         );
 
         $result = DB::table('forms')->insert($data);
