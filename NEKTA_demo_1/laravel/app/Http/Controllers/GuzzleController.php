@@ -32,7 +32,7 @@ class GuzzleController extends Controller
             'Accept' => 'Accept: application/json'
         ];
 
-            $json_response = $client->request('post', '/api.login', $post, $send_headers);
+            $json_response = $client->request('POST', '/api.login', $send_headers, $post);
 
             if ($json_response['login'] === true) {
 
