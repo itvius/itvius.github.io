@@ -22,7 +22,7 @@
             var children = data.data.children;
             var author = data.data.children[0].data.author;
             console.log(author);
-            $("#results").append("<a href='https://reddit.com/u/" + author + "'>" + author + "</a>");
+            $("#results").prepend("<a href='https://reddit.com/u/" + author + "'>" + author + "</a>");
             var kind = data.kind;
         });
 
