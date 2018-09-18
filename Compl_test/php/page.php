@@ -7,5 +7,3 @@ if (isset($_GET['subreddit'])){
 }
 $data = file_get_content("http://reddit.com/.json");
 echo $data;
-
-?>
