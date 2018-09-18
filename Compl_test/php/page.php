@@ -1,9 +1,9 @@
 <?php
 
-
-$data = file_get_contents("http://reddit.com/.json");
+echo 'Hello'
+/*$data = file_get_contents("http://reddit.com/.json");
 json_decode($data);
-echo $data;
+echo $data;*/
 
 /*
 if (isset($_GET['subreddit'])){
