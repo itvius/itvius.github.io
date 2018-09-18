@@ -2,6 +2,7 @@
 
 
 $data = file_get_contents("http://reddit.com/.json");
+json_decode($data);
 echo $data;
 
 /*
