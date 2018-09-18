@@ -16,18 +16,14 @@
 
     <script>
 
-        $.get("php/page.php",/*{'subreddit': 'food'},*/ function(data){
+        $.get("php/page.php", function(data){
             $("#results").html(data);
             /*data = JSON.parse(data);*/
-            console.log(data);
-            var post = data.data.children[0].data;
-            var author = post.author;
-            var postHTML = post.selftext_html;
-            $("#results").prepend(postHTML);
-            console.log(author);
-            $("#results").prepend("<a href='https://reddit.com/u/" + author + "'>" + author + "</a>");
+            var children = data.data.children;
+            var test = data.data.children[0].data.author;
+            console.log(test);
             var kind = data.kind;
-            console.log(data);
+            //console.log(data);
         });
 
     </script>
