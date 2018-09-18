@@ -1,5 +1,10 @@
 <?php
 
+
+$data = file_get_contents("http://reddit.com/.json");
+echo $data;
+
+/*
 if (isset($_GET['subreddit'])){
     $sub = $_GET['subreddit'];
     echo $sub;
@@ -9,4 +14,5 @@ if (isset($_GET['subreddit'])){
 $data = file_get_contents("http://reddit.com/.json");
 echo $data;
 
+*/
 ?>
