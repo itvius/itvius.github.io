@@ -5,7 +5,7 @@ if (isset($_GET['subreddit'])){
 } else {
     echo 'no sub found';
 }
-$data = file_get_content("http://reddit.com/.json");
+$data = file_get_contents("http://reddit.com/.json");
 echo $data;
 
 ?>
