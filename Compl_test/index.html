@@ -20,7 +20,7 @@
         /*jQuery(document).ready(function($) {*/
         $.get("php/page.php", function(data) {
             $("#results").html(data);
-            data = JSON.parse('<data>');
+            data = JSON.parse(data);
             var post = data.data.children[0].data;
             var author = post.author;
             var postHTML = post.selftext_html;
@@ -28,6 +28,7 @@
             console.log(author);
             $("#results").prepend("<a href='https://reddit.com/u/" + author + "'>" + author + "</a>");
             var kind = data.kind;
+            console.log(data);
         });
         /*});*/
     </script>
