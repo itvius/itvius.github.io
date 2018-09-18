@@ -15,11 +15,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
     <script>
-        dataType:'json';
 
-        /*jQuery(document).ready(function($) {*/
         $.get("php/page.php", function(data) {
-
             $("#results").html(data);
             data = JSON.parse(data);
             var post = data.data.children[0].data;
@@ -31,7 +28,7 @@
             var kind = data.kind;
             console.log(data);
         });
-        /*});*/
+
     </script>
 </body>
 </html>

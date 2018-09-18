@@ -1,4 +1,4 @@
-<?php
+
 
 if (isset($_GET['subreddit'])){
     $sub = $_GET['subreddit'];
