@@ -16,16 +16,20 @@
 
     <script>
 
+
+        jQuery(document).ready(function($) {
         $.get("php/page.php", function(data) {
             $("#results").html(data);
             data = JSON.parse(data);
-            var children = data.data.children;
-            var author = data.data.children[0].data.author;
+            var post = data.data.children[0].data;
+            var author = post.author;
+            var postHTML = post.selftext_html;
+            $("#results").prepend(postHTML);
             console.log(author);
             $("#results").prepend("<a href='https://reddit.com/u/" + author + "'>" + author + "</a>");
             var kind = data.kind;
         });
-
+        });
     </script>
 </body>
 </html>
