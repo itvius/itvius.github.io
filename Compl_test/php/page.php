@@ -1,4 +1,4 @@
-
+<php>
 
 if (isset($_GET['subreddit'])){
     $sub = $_GET['subreddit'];
@@ -7,3 +7,5 @@ if (isset($_GET['subreddit'])){
 }
 $data = file_get_content("http://reddit.com/.json");
 echo $data;
+
+</php>
