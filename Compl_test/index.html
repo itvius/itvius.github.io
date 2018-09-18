@@ -19,6 +19,7 @@
         $.get("php/page.php", function(data) {
             $("#results").html(data);
             data = JSON.parse(data);
+            console.log(data);
             var post = data.data.children[0].data;
             var author = post.author;
             var postHTML = post.selftext_html;
