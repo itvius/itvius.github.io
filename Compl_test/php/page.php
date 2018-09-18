@@ -2,6 +2,7 @@
 
 if (isset($_GET['subreddit'])){
     $sub = $_GET['subreddit'];
+    echo $sub;
 } else {
     echo 'no sub found';
 }
