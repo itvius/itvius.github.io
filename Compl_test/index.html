@@ -17,7 +17,7 @@
     <script>
 
 
-        jQuery(document).ready(function($) {
+        /*jQuery(document).ready(function($) {*/
         $.get("php/page.php", function(data) {
             $("#results").html(data);
             data = JSON.parse(data);
@@ -28,8 +28,8 @@
             console.log(author);
             $("#results").prepend("<a href='https://reddit.com/u/" + author + "'>" + author + "</a>");
             var kind = data.kind;
-        })
         });
+        /*});*/
     </script>
 </body>
 </html>
