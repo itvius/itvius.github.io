@@ -1,36 +1,3 @@
-<!--<!doctype html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-    <!--<meta charset="UTF-8">-->
-    <!--<meta name="viewport"-->
-          <!--content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
-    <!--<meta http-equiv="X-UA-Compatible" content="ie=edge">-->
-    <!--<title>Тестовое задание</title>-->
-<!--</head>-->
-<!--<body>-->
-    <!--<div id="results">-->
-
-    <!--</div>-->
-
-    <!--<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>-->
-
-    <!--&lt;!&ndash;<script>-->
-
-        <!--$.get("php/page.php", function(data){-->
-            <!--$("#results").html(data);-->
-            <!--data = JSON.parse(data);-->
-            <!--var children = data.data.children;-->
-            <!--var test = data.data.children[0].data.author;-->
-            <!--console.log(test);-->
-            <!--var kind = data.kind;-->
-            <!--//console.log(data);-->
-        <!--});-->
-
-    <!--</script>&ndash;&gt;-->
-<!--</body>-->
-<!--</html>-->
-
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -38,11 +5,121 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Тестовое</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
 </head>
 <body>
-<?php
-    echo "Hello"
-?>
+
+<div id="results" class="container">
+    <!--<input type="text" v-model="message1">
+    <h1>{{ message1 }}</h1>-->
+    Загрузка...
+</div>
+
 </body>
 </html>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+
+    /*var app = new Vue ({
+        el: '#results',
+        data: {
+            view: true,
+            message1: ''
+        }
+    });*/
+
+
+    function templatePost(data) {
+        var postID = data.id;
+        var postTitle = data.title;
+        var postURL = "https://www.reddit.com/" + data.url;
+        var postAuthor = data.author,
+            postText = data.text,
+            authorURL = 'https://www.reddit.com/u/' + postAuthor,
+            postThumbnail = data.thumbnail;
+
+        if (postText.length > 0){
+            postText += "<br /><br />;"
+        }
+        //Шаблон поста
+        var template = '<div id="' + postID + '" style="background-color: white; color: grey; border-radius: 6px; font-weight: 600; padding: 8px; margin: 10px; text-align: left;">';
+        if(postThumbnail.length > 0){
+            template += '<div class="row"><div class="col-sm-2">';
+            template += '<img src="' + postThumbnail + '" width="100%" height="auto"></div>';
+            template += '<div class="col-sm-10">';
+        }
+
+
+        template += '' +
+            /*'<div id="' + postID + '" class="singlePost">' +*/
+            '<a href="' + postURL + '" target="_blank">' + postTitle + '</a><br />' +
+            'Автор <a href="' +authorURL + '" target="_blank">' + postAuthor + '</a><br />' +
+            '' + postText + '' +
+            '</div>';
+
+        if(postThumbnail.length > 0){
+            template += "</div></div>";
+        }
+        template += "</div>";
+        return template;
+
+
+    }
+    //subreddit - парамктп с категорией поста
+    $.get("php/page.php", {'subreddit' : 'cat'}, function(data){
+
+        data = JSON.parse(data);
+        var allPosts = data.data.children;
+        var numPosts = allPosts.length; //Кол-во постов выводимых на страницу
+        var post = '';
+        for(var postLoop = 0; postLoop < numPosts; postLoop++){
+
+            post = allPosts[postLoop].data;
+            var postAuthor = post.author;
+            var postText = post.selftext,
+                postTitle = post.title,
+                postURL = post.permalink,
+                postID = post.id,
+                postThumbnail = post.thumbnail;
+
+            if(postThumbnail == 'self'){
+                postThumbnail = '';
+            } else if(postThumbnail == 'image'){
+                postThumbnail = post.url;
+            } else if(postThumbnail == 'default'){
+                postThumbnail = '';
+            }
+
+            var postData = {
+                "id": postID,
+                "title": postTitle,
+                "author": postAuthor,
+                "url": postURL,
+                "text": postText,
+                "thumbnail": postThumbnail
+            };
+
+            console.log(postData);
+
+
+            var postHTML = templatePost(postData);
+
+            if(postLoop == 0){
+                $("#results").html('');
+            }
+
+            $("#results").append(postHTML);
+        }
+    });
+
+</script>

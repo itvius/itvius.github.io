@@ -1,19 +1,18 @@
 <?php
 
-echo "Hello"
-/*$data = file_get_contents("http://reddit.com/.json");
-json_decode($data);
-echo $data;*/
-
-/*
-if (isset($_GET['subreddit'])){
-    $sub = $_GET['subreddit'];
-    echo $sub;
+if(isset($_GET['r']) && stelength($_GET['r']) > 0){
+    $subreddit = FILTER_VAR(urlcode($_GET['r']), FILTER_SANITIZE_STRING);
 } else {
-    echo 'no sub found';
+    $subreddit = '';
 }
-$data = file_get_contents("http://reddit.com/.json");
-echo $data;
 
-*/
+
+if(isset($_GET['subreddit']) && strlen($_GET['subreddit']) > 0){
+    $sub = $_GET['subreddit'];
+    $url = "https://reddit.com/r/$sub/.json";
+} else {
+    $url = "https://reddit.com/.json";
+}
+$data = file_get_contents($url);
+echo $data;
 ?>
