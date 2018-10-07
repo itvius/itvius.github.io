@@ -1,0 +1,10 @@
+.head{
+	height: 50px;
+	background-color: grey;
+	color: black;
+}
+.text{
+	padding: 7px;
+	font-weight: bold;
+	font-size: 2rem;
+}

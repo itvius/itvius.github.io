@@ -1,0 +1,12 @@
+<mat-sidenav-container>
+	<mat-sidenav #sidenav mode="side" opened="false" class="sidebar">
+  		<mat-list>
+ 			<mat-list-item  *ngFor="let column of column"> <div class="list-text">{{ column.name }}</div> </mat-list-item>
+		</mat-list>
+	</mat-sidenav>
+	<mat-sidenav-content>
+  		<mat-icon svgIcon="thumbs-up" (click)="sidenav.toggle()" class="icon"></mat-icon>
+  		<app-header></app-header>
+  		<app-content></app-content>
+  	</mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,11 @@
+.sidebar{
+  min-width: 200px;
+}
+.icon{
+  float:left;
+  padding: 10px;
+}
+.list-text{
+  width: 100%;
+  text-align: center;
+}
