@@ -1,0 +1,92 @@
+<mat-card *ngIf="isSpinnerVisible">
+  <mat-progress-spinner
+          color="primary"
+          mode="indeterminate">
+  </mat-progress-spinner>
+</mat-card>
+<mat-card *ngIf="!isSpinnerVisible" class="page-header"><strong>{{title | translate}}</strong>
+  <div class="buttons">
+    <button  mat-raised-button color="primary" routerLink="add">
+      <mat-icon>add_circle</mat-icon>
+      {{'users.buttons.add' | translate}}
+    </button>
+  </div>
+</mat-card>
+<mat-card>
+<table *ngIf="!isSpinnerVisible" mat-table #table [dataSource]="dataSource"  matSort matSortActive="id" matSortDisableClear matSortDirection="asc">
+
+    <ng-container matColumnDef="active">
+        <th mat-header-cell *matHeaderCellDef> {{'users.list.columns.active' | translate}} </th>
+        <td mat-cell *matCellDef="let user">
+            <mat-slide-toggle *ngIf="user.tie_default_company['is_admin'] === false" class="leftEl_padding" (change)="toggleActive($event, user.id)" [checked]="user.active"></mat-slide-toggle>
+        </td>
+    </ng-container>
+
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header disableClear="true"> {{'users.list.columns.id' | translate}} </th>
+    <td mat-cell *matCellDef="let user"> {{user.id}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'users.list.columns.name' | translate}} </th>
+    <td mat-cell *matCellDef="let user"> {{user.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="patronymic">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'users.list.columns.patronymic' | translate}} </th>
+    <td mat-cell *matCellDef="let user"> {{user.patronymic}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="surname">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'users.list.columns.surname' | translate}} </th>
+    <td mat-cell *matCellDef="let user"> {{user.surname}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="phone_number">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'users.list.columns.phone_number' | translate}} </th>
+    <td mat-cell *matCellDef="let user"> {{user.phone_number}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'users.list.columns.email' | translate}} </th>
+    <td mat-cell *matCellDef="let user"> {{user.email}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="user_time_zone">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'users.list.columns.user_time_zone' | translate}} </th>
+    <td mat-cell *matCellDef="let user">
+      <span *ngIf="user.user_time_zone >= 0">GMT +{{user.user_time_zone}} </span>
+      <span *ngIf="user.user_time_zone < 0">GMT {{user.user_time_zone}} </span>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="group_name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'users.list.columns.group_name' | translate}} </th>
+    <td mat-cell *matCellDef="let user"><span [class]="user.tie_default_company.is_admin ? 'orange' : ''">{{user.group_name}}</span></td>
+  </ng-container>
+
+  <ng-container matColumnDef="settings">
+    <th mat-header-cell *matHeaderCellDef> <button mat-icon-button [matMenuTriggerFor]="menu"><mat-icon>settings</mat-icon></button>
+      <mat-menu #menu="matMenu">
+        <mat-list *ngFor="let setting of Columns; let i = index">
+          <mat-list-item *ngIf="setting !== 'settings'">
+            <mat-checkbox (click)="$event.stopPropagation();" [checked]="settingColumns[i] === 1" (change)="onChangeSettings(i);"> {{'users.list.columns.'+setting | translate}} </mat-checkbox>
+          </mat-list-item>
+        </mat-list>
+      </mat-menu>
+    </th>
+    <td mat-cell  *matCellDef="let user; let i = index;">
+      <button mat-icon-button [matMenuTriggerFor]="appMenu">
+        <mat-icon>reorder</mat-icon>
+      </button>
+      <mat-menu #appMenu="matMenu">
+        <button mat-menu-item (click)="deleteUser(user.id,i)" *ngIf="!user['tie_default_company'].is_admin">Удалить</button>
+        <button mat-menu-item routerLink="edit/{{user.id}}">Редактировать</button>
+      </mat-menu>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+  </mat-card>
