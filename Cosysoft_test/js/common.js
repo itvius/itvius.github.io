@@ -18,17 +18,17 @@ add.onclick = function addd(){
 span.onclick = function() {
     popup.style.display = 'none';
     document.body.style.overflow = '';
-}
+};
 
 window.onclick = function(event) {
-    if(event.target == popup) {
+    if(event.target === popup) {
         popup.style.display = 'none';
         document.body.style.overflow = '';
     }
-}
+};
 
 function addDiv(urlPath, commentArea, ident) {
-    if(urlPath.value == ''){
+    if(urlPath.value === ''){
         urlPath.value = 'Введите URL изображения';
         urlPath.style.border = '1px solid red';
     } else if (!urlPath.value.match(regexps) && !urlPath.value.match(regexp)) {
@@ -48,7 +48,7 @@ function addDiv(urlPath, commentArea, ident) {
             document.getElementById('img_modal').src = img.src;
             document.getElementById('m_cont').innerHTML = comment.innerHTML;
             document.getElementById('m_cont').className = 'comment_wrap';
-        }
+        };
 
         var img = document.createElement('img');
         img.className = 'img_css';
@@ -65,7 +65,7 @@ function addDiv(urlPath, commentArea, ident) {
             var editComment = prompt('Введите комментарий', '');
             if (editComment !== null) {
                 comment.innerHTML = editComment;
-                if (divImg.id == returnObj[divImg.id].id) {
+                if (divImg.id === returnObj[divImg.id].id) {
                     returnObj[divImg.id].commentArea = editComment;
                 }
 
@@ -74,7 +74,7 @@ function addDiv(urlPath, commentArea, ident) {
                 var serialObj = JSON.stringify(obj);
                 localStorage.setItem('mass_img', serialObj);
             }
-        }
+        };
 
         element.insertBefore(divImg, element.firstChild);
         divImg.insertBefore(link, divImg.firstChild);
@@ -107,7 +107,7 @@ function addFromJSON(urlPath, commentArea, ident){
         document.getElementById('img_modal').src = img.src;
         document.getElementById('m_cont').innerHTML = comment.innerHTML;
         document.getElementById('m_cont').className = 'comment_wrap';
-    }
+    };
 
     var img = document.createElement('img');
     img.className = 'img_css';
@@ -127,7 +127,7 @@ function addFromJSON(urlPath, commentArea, ident){
 
             var returnObj = JSON.parse(localStorage.getItem('mass_img'));
 
-            if (divImg.id == returnObj[divImg.id].id) {
+            if (divImg.id === returnObj[divImg.id].id) {
                 returnObj[divImg.id].commentArea = editComment;
             }
 
@@ -136,7 +136,7 @@ function addFromJSON(urlPath, commentArea, ident){
             var serialObj = JSON.stringify(obj);
             localStorage.setItem('mass_img', serialObj);
         }
-    }
+    };
 
     element.insertBefore(divImg, element.firstChild);
     divImg.insertBefore(link, divImg.firstChild);
@@ -157,7 +157,7 @@ function addWrap(img, comment) {
             id: p,
             urlPath: img,
             commentArea: comment
-        })
+        });
 
     var serialObj = JSON.stringify(obj);
     localStorage.setItem('mass_img', serialObj);
@@ -171,9 +171,9 @@ window.onload = function() {
             addFromJSON(returnObj[i].urlPath, returnObj[i].commentArea, returnObj[i].id);
         });
     }
-}
+};
 
 clearDiv.onclick = function() {
     localStorage.clear();
     window.location.reload();
-}
+};
