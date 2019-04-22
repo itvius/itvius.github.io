@@ -1,0 +1,52 @@
+<router-outlet></router-outlet>
+
+<mat-toolbar class="header">
+  <mat-toolbar-row class="toolbar-first">
+    <button mat-button mat-icon-button (click)="toggle()">
+      <mat-icon>view_headline</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-drawer-container class="container" autosize>
+  <mat-drawer [ngClass]="status ? 'mini' : 'full'" #drawer class="sidenav" opened mode="side">
+    <form [formGroup]="dataForm">
+    <mat-list>
+      <mat-form-field>
+        <input matInput type="text" placeholder="Введите URL картинки" formControlName="url" required>
+      </mat-form-field>
+    </mat-list>
+    <mat-list>
+      <mat-form-field>
+        <input matInput type="text" placeholder="Введите комментарий" formControlName="comment" required>
+      </mat-form-field>
+    </mat-list>
+      <mat-list>
+        <button mat-raised-button color="primary" (click)="addImg()">Добавить</button>
+      </mat-list>
+    </form>
+    <mat-list>
+      <button mat-raised-button color="primary" (click)="clearStorage()">Очистить localStorage</button>
+    </mat-list>
+  </mat-drawer>
+  <div class="main-content">
+    <div style="padding-bottom: 20px;">
+      Описание: 2 input поля и 2 кнопки. Подгружать картинку по ссылке и добавлять к ней описание. Реализовать возможность
+      редактирования, удаления записи. А так же реализовать очищение всего списка.
+      Используются: Angular, Angular Material, JavaScript, HTML, Less.
+    </div>
+  <div style="  text-align: center;">
+    <div *ngFor="let img of imagesMass" style="display: inline-block; padding: 10px 25px 10px 0;">
+      <div style="display: inline-block; width: 400px; text-align: center;">
+        <mat-card>
+        <img src="{{img.url}}" style="width: 100%">
+        <div style="padding: 10px 0">{{img.comment}}</div>
+          <span><button mat-raised-button color="primary" (click)="openDialog(img.id, img.comment, img.url)" style="margin-right: 25px;">Редактировать</button></span>
+          <span><button mat-raised-button color="primary" (click)="delete(img.id)">Удалить</button></span>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  </div>
+
+</mat-drawer-container>
