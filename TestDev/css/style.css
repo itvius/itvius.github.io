@@ -166,6 +166,27 @@ body {
 .list ul li a {
     display: inline-block;
 }
+.cloud1 {
+    position: absolute;
+    left: 0;
+    top: 70%;
+    z-index: -1;
+}
+.cloud2 {
+    position: absolute;
+    right: 0;
+    top: 200%;
+    z-index: -1;
+}
+.cloud3 {
+    position: absolute;
+    left: 0;
+    top: 380%;
+    z-index: -1;
+}
+.urban {
+    position: absolute;
+}
 @media (max-width: 575.98px) {
     .firstTitle {
         font-size: 36px;
@@ -188,6 +209,15 @@ body {
     }
     .carouselCardBody {
         padding: 1.25rem 1.3rem;
+    }
+    .cloud1 {
+        display: none;
+    }
+    .cloud2 {
+        display: none;
+    }
+    .cloud3 {
+        display: none;
     }
     section {
         padding-bottom: 50px;
