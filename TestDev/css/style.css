@@ -219,7 +219,8 @@ body {
     from {
         transform: translate(-50%, -50%) rotate(0deg); }
     to {
-        transform: translate(-50%, -50%) rotate(360deg); } }s
+        transform: translate(-50%, -50%) rotate(360deg); }
+}
 @media (max-width: 575.98px) {
     .firstTitle {
         font-size: 36px;
