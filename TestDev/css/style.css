@@ -210,7 +210,7 @@ body {
     .carouselCardBody {
         padding: 1.25rem 1.3rem;
     }
-    .cloud1 {
+    /*.cloud1 {
         display: none;
     }
     .cloud2 {
@@ -218,7 +218,7 @@ body {
     }
     .cloud3 {
         display: none;
-    }
+    }*/
     section {
         padding-bottom: 50px;
     }
@@ -230,7 +230,7 @@ body {
     .textOptions {
         padding-top: 35px;
     }
-    .cloud1 {
+    /*.cloud1 {
         display: none;
     }
     .cloud2 {
@@ -238,14 +238,14 @@ body {
     }
     .cloud3 {
         display: none;
-    }
+    }*/
 }
 
 @media (min-width: 768px) {
     section {
         padding-bottom: 50px;
     }
-    .cloud1 {
+    /*.cloud1 {
         display: none;
     }
     .cloud2 {
@@ -253,7 +253,7 @@ body {
     }
     .cloud3 {
         display: none;
-    }
+    }*/
 }
 
 @media (min-width: 992px) {
