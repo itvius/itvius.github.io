@@ -230,6 +230,15 @@ body {
     .textOptions {
         padding-top: 35px;
     }
+    .cloud1 {
+        display: none;
+    }
+    .cloud2 {
+        display: none;
+    }
+    .cloud3 {
+        display: none;
+    }
 }
 
 @media (min-width: 768px) {
