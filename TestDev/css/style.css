@@ -245,6 +245,15 @@ body {
     section {
         padding-bottom: 50px;
     }
+    .cloud1 {
+        display: none;
+    }
+    .cloud2 {
+        display: none;
+    }
+    .cloud3 {
+        display: none;
+    }
 }
 
 @media (min-width: 992px) {
