@@ -1,0 +1,249 @@
+body {
+    background: #f5faff;
+    font-family: 'Montserrat', serif;
+}
+.menu ul li a {
+    font-size: 14px;
+}
+.bounce {
+    background: url(../img/Group5@2x.png)no-repeat center,
+                url(../img/Vector.svg) no-repeat center;
+    background-size: 80% 100%, 100%;
+}
+.btn {
+    border-radius: 10px;
+}
+.servicesCard {
+    box-shadow: 0px 0px 40px rgba(118, 157, 202, 0.15);
+    border: 0;
+    border-radius: 10px;
+}
+.servicesCard .card-body {
+    padding: 40px;
+}
+.cardImg {
+    position: absolute;
+    left: -42px;
+}
+.card-text {
+    margin: 0;
+}
+.mh {
+    min-height: 114px;
+}
+.paddingCard {
+    padding: 1.25rem 3.3rem;
+}
+.contentCard {
+    box-shadow: 0px 0px 40px rgba(118, 157, 202, 0.15);
+    border-radius: 10px;
+    border: 0;
+}
+.textOptions {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 29px;
+    color: #3A4959;
+}
+.carouselCard {
+    min-height: 360px;
+    background: #D5E9FF;
+    box-shadow: 0px 0px 20px rgba(118, 157, 202, 0.15);
+    border: 0;
+    border-radius: 10px;
+}
+.carouselCardBody {
+    padding: 2.25rem 3.3rem;
+}
+.carouselTitle {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 29px;
+    color: #3A4959;
+}
+.mail {
+    position: absolute;
+    left: 3%;
+    top: -11%;
+    width: 195px;
+    height: 98px;
+}
+.yellowDiv {
+    border-radius: 10px 10px 0px 0px;
+}
+.arrow {
+    width: 110px;
+    height: 5px;
+    background: #056CDE;
+    border-radius: 10px;
+    float: left;
+}
+.firstTitle, .contactTitle {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 58px;
+    line-height: 67px;
+    letter-spacing: 1px;
+    color: #3A4959;
+}
+.firstText, .contactText {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 29px;
+    color: #3A4959;
+}
+.firstBtn, .contactBtn {
+    padding: 10px 50px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+}
+.secondText {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 29px;
+    color: #3A4959;
+}
+.secondBtn {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: #3A4959;
+}
+.card-img-top {
+    height: 250px;
+}
+.servicesCard .card-title {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 1px;
+    color: #3A4959;
+}
+.advantagesTitle, .servicesTitle, .testimonialsTitle, .secondTitle, .title  {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 38px;
+    line-height: 44px;
+    letter-spacing: 1px;
+    color: #3A4959;
+}
+.carousel-indicators li {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #056CDE;
+}
+.carousel-control-next, .carousel-control-prev {
+    top: 108%;
+    width: 26px;
+    height: 16px;
+}
+.contactNumber {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #3A4959;
+}
+.list ul li a {
+    display: inline-block;
+}
+@media (max-width: 575.98px) {
+    .firstTitle {
+        font-size: 36px;
+        line-height: 40px;
+    }
+    .secondTitle {
+        font-size: 36px;
+        line-height: 40px;
+    }
+    .advantagesTitle {
+        font-size: 36px;
+        line-height: 40px;
+    }
+    .servicesTitle {
+        font-size: 36px;
+        line-height: 40px;
+    }
+    .textOptions {
+        padding-top: 0;
+    }
+    .carouselCardBody {
+        padding: 1.25rem 1.3rem;
+    }
+    section {
+        padding-bottom: 50px;
+    }
+}
+@media (min-width: 576px) {
+    section {
+        padding-bottom: 50px;
+    }
+    .textOptions {
+        padding-top: 35px;
+    }
+}
+
+@media (min-width: 768px) {
+    section {
+        padding-bottom: 50px;
+    }
+}
+
+@media (min-width: 992px) {
+    .fbl {
+        padding-top: 60px;
+    }
+    section {
+        padding-bottom: 50px;
+    }
+    .pSecondCard {
+        margin-top: 140px;
+    }
+    .rpSecondCard {
+        margin-top: -80px;
+    }
+    .textOptions {
+        padding-top: 44px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .fbl {
+        padding-top: 0;
+    }
+    .pForSecond {
+        padding-top: 55px;
+        padding-left: 70px;
+    }
+    section {
+        padding-bottom: 100px;
+    }
+    .pSecondCard {
+        margin-top: 140px;
+    }
+    .rpSecondCard {
+        margin-top: -80px;
+    }
+    .textOptions {
+        padding-top: 62px;
+    }
+}s
