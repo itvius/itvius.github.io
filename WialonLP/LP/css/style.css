@@ -58,3 +58,7 @@ header .nav-item {
     width: 100%;
     justify-content: center;
 }
+.offer {
+    background-color: black;
+    padding: 30px 0;
+}
