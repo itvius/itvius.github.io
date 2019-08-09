@@ -47,7 +47,7 @@ header .nav-item {
     background-color: #ffffffbf;
 }
 .footer {
-    background-color: black;
+    background-color: #2f2f2f;
     color: white;
 }
 .footer .nav-link {
@@ -59,6 +59,9 @@ header .nav-item {
     justify-content: center;
 }
 .offer {
-    background-color: black;
-    padding: 30px 0;
+    background-color: #2f2f2f;
+    padding: 50px 0;
+}
+.buttonGet {
+
 }
