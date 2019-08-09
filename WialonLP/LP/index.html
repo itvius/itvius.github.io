@@ -8,6 +8,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
     <section id="info" class="info">
@@ -48,8 +50,10 @@
             <div class="row" style="padding-bottom: 30px;">
                 <div class="col-12 col-md-12 col-lg text-center text-lg-left">
                     <h1>КОНТРОЛЬ<br>ТРАНСПОРТА</h1>
-                    <div style="width: 200px; height: 55px;">
-                        <button type="button" class="btn btn-outline-primary">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</button>
+                    <div>
+                        <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#exampleModalCenter" style="width: 200px; height: 62px; border-radius: 210px;">
+                            ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ
+                        </button>
                     </div>
                 </div>
                 <div class="col mt-4 mt-lg-0"><img src="img/3.png" alt="" style="width: 100%;"></div>
@@ -70,36 +74,70 @@
                         <a class="nav-link" id="case3-tab" data-toggle="tab" href="#case3" role="tab" aria-controls="case3" aria-selected="false">Цистерны</a>
                     </li>
                 </ul>
-                <div class="tab-content" id="myTabContent" style="text-align: center;">
-                    <div class="tab-pane fade show active" id="case1" role="tabpanel" aria-labelledby="case1-tab">
-                        <h4>Решение по контролю условий перевозки груза</h4>
-                        <p>Обеспечивает:</p>
-                        <p>- Контроль температурных режимов перевозки</p>
-                        <p>- Отслеживание несанкционированного доступа в грузовой отсек</p>
-                        <p>- Дневная и ночная съёмка фотокамерой по заданному сценарию (фотокамера в прицепе)</p>
-                        <p>- Подробные фотоотчеты по датам и местоположению</p>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="case1" role="tabpanel" aria-labelledby="case1-tab" style="font-size: 19px;">
+                        <h3 class="text-center">Решение по контролю условий перевозки груза</h3>
+                        <div class="row text-center text-md-left">
+                            <div class="col-12 col-md">
+                                <p><i>Универсальным решением является комплект:</i></p>
+                                <p>	&mdash; Трекер</p>
+                                <p>	&mdash; Датчик температуры</p>
+                                <p>	&mdash; Датчик двери</p>
+                                <p>	&mdash; Фотокамера</p>
+                            </div>
+                            <div class="col-12 col-md">
+                                <p><i>Все это обеспечивает:</i></p>
+                                <p>	&mdash; Контроль температурных режимов перевозки</p>
+                                <p>	&mdash; Отслеживание несанкционированного доступа в грузовой отсек</p>
+                                <p>	&mdash; Дневная и ночная съёмка фотокамерой по заданному сценарию (фотокамера в прицепе)</p>
+                                <p>	&mdash; Подробные фотоотчеты по датам и местоположению</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="tab-pane fade" id="case2" role="tabpanel" aria-labelledby="case2-tab">
-                        <h4>Автономное устройство контроля температурного режима</h4>
-                        <p>Обеспечивает:</p>
-                        <p>- Наблюдение за температурой в режиме онлайн</p>
-                        <p>- Не требует монтажа оборудования на транспортное средство</p>
-                        <p>- Автономная работа до 6 суток</p>
-                        <p>- Фиксация местоположения и температуры в системе Wialon</p>
+                    <div class="tab-pane fade" id="case2" role="tabpanel" aria-labelledby="case2-tab" style="font-size: 19px;">
+                        <h3 class="text-center">Автономное устройство контроля температурного режима</h3>
+                        <div class="row text-center text-md-left">
+                            <div class="col-12 col-md">
+                                <p><i>Универсальным решением является комплект:</i></p>
+                                <p>	&mdash; Навигационный модуль</p>
+                                <p>	&mdash; Термосенсор DS18В20</p>
+                                <p>	&mdash; Аккумуляторы на 15 000 mAh</p>
+                                <p>	&mdash; Плата заряда</p>
+                                <p>	&mdash; Разъем зарядки</p>
+                                <p>	&mdash; Корпус</p>
+                            </div>
+                            <div class="col-12 col-md">
+                                <p><i>Все это обеспечивает:</i></p>
+                                <p>	&mdash; Наблюдение за температурой в режиме онлайн</p>
+                                <p>	&mdash; Автономную работу до 6 суток</p>
+                                <p>	&mdash; Фиксацию местоположения и температуры в системе Wialon</p>
+                                <p>	&mdash; А также, не требует монтажа оборудования на транспортное средство</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="tab-pane fade" id="case3" role="tabpanel" aria-labelledby="case3-tab">
-                        <h4>Контроль работы топливозаправщика</h4>
-                        <p>Обеспечивает:</p>
-                        <p>- Управление выдачами топлива</p>
-                        <p>- Видеофиксация процессов  (видеокамеры по бортам)</p>
-                        <p>- Сверка выданного и заправленного топлива</p>
+                    <div class="tab-pane fade" id="case3" role="tabpanel" aria-labelledby="case3-tab" style="font-size: 19px;">
+                        <h3 class="text-center">Контроль работы топливозаправщика</h3>
+                        <div class="row text-center text-md-left">
+                            <div class="col-12 col-md">
+                                <p><i>Универсальным решением является комплект:</i></p>
+                                <p>	&mdash; Трекер</p>
+                                <p>	&mdash; Датчика уровня топлива</p>
+                                <p>	&mdash; Камеры</p>
+                            </div>
+                            <div class="col-12 col-md">
+                                <p><i>Все это обеспечивает:</i></p>
+                                <p>	&mdash; Управление выдачами топлива</p>
+                                <p>	&mdash; Видеофиксацию процессов  (видеокамеры по бортам)</p>
+                                <p>	&mdash; Сверку выданного и заправленного топлива</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
         </div>
     </section>
     <section id="offer" class="offer">
         <div class="container">
-            <h1 class="text-center mb-4" style="color: white;">ПРЕДЛОЖЕНИЯ</h1>
+            <h1 class="text-center mb-4" style="color: white; font-size: 2.3rem;">ПРЕДЛОЖЕНИЯ</h1>
             <div class="row justify-content-center">
                 <div class="card-deck">
                     <div class="card text-center" style="width: 18rem;">
@@ -107,7 +145,7 @@
                             <h5 class="card-title">Бесплантый тестовый период</h5>
                             <p class="card-text">Для полного понимания системы мы предоставим бесплатный тестовый период. Вы сможете оценить все преимущества ПО Wialon</p>
                             <div>
-                                <a href="#" class="btn btn-primary">Уточнить</a>
+                                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Уточнить</a>
                             </div>
                         </div>
                     </div>
@@ -119,7 +157,7 @@
                                 Мы можем проконсультировать, предложить надежное оборудование, смонтировать его или выполнить наладочные работы, нет необходимости искать несколько исполнителей
                             </p>
                             <div>
-                                <a href="#" class="btn btn-primary">Уточнить</a>
+                                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Уточнить</a>
                             </div>
                         </div>
                     </div>
@@ -129,7 +167,7 @@
                             <h5 class="card-title">Монтажи в любом городе РФ</h5>
                             <p class="card-text">Дилерская сеть численностью более 350 партнеров позволит профессионально оказать услуги по монтажу навигационного оборудования на всей территории РФ</p>
                             <div>
-                                <a href="#" class="btn btn-primary">Уточнить</a>
+                                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Уточнить</a>
                             </div>
                         </div>
                     </div>
@@ -188,6 +226,34 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Получите консультацию</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-control" id="formGroupExampleInput" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="phone" class="form-control" id="formGroupExampleInput2" placeholder="Ваш телефон" required>
+                        </div>
+                        <div class="text-right">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                            <button type="submit" class="btn btn-primary">Отправить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

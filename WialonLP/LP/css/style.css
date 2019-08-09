@@ -1,5 +1,12 @@
+html {
+    font-family: 'Roboto', sans-serif;
+    /*font-family: 'Open Sans', sans-serif;*/
+}
 section {
     margin-bottom: 40px;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
 }
 .tab-pane {
     padding-top: 15px;
@@ -64,4 +71,10 @@ header .nav-item {
 }
 .buttonGet {
 
+}
+#cases .nav-item a {
+    color: black;
+}
+.modal-body input {
+    border-radius: 200px;
 }
