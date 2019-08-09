@@ -13,7 +13,7 @@ if(mail ($to, $subject, $message, $headers)){
 ?>
 <script type="text/javascript">
     alert('Спасибо за заявку. Мы свяжемся с вами в ближайшее время.');
-    Location.reload(true);
+    document.location.reload(true);
 
 </script>
 <?}?>
