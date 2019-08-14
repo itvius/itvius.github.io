@@ -75,3 +75,6 @@ header .nav-item {
 .modal-body input {
     border-radius: 200px;
 }
+/*.carousel-control-prev:hover, .carousel-control-prev, .carousel-control-next:hover, .carousel-control-next {
+    background-color: #000000a8;
+}*/
