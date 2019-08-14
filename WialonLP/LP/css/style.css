@@ -63,8 +63,9 @@ header .nav-item {
     justify-content: center;
 }
 .offer {
-    background-color: #2f2f2f;
-    padding: 50px 0;
+    background: url("../img/bg_product_3.jpg")no-repeat center;
+    background-size: cover;
+    color: white;
 }
 .buttonGet {
 
@@ -75,6 +76,7 @@ header .nav-item {
 .modal-body input {
     border-radius: 200px;
 }
-/*.carousel-control-prev:hover, .carousel-control-prev, .carousel-control-next:hover, .carousel-control-next {
-    background-color: #000000a8;
-}*/
+.invite {
+    background-color: #2f2f2f;
+    color: white;
+}
