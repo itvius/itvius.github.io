@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Merriweather&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section id="menu" class="menu">
+        <div class="container">
+            <div class="row">
+                <div class="menu-item col-xl-3 col-lg-3">
+                    <div class="menu-item-logo">
+                        <a href="#" class="menu-item-logo-img">
+                            <img src="images/logo.png" alt="">
+                        </a>
+                        <p class="menu-item-logo-text">BuhOne</p>
+                    </div>
+                </div>
+                <div class="menu-item col-xl-8 col-lg-8">
+                    <div class="menu-item-info">
+                        <div class="menu-item-info-top">
+                            <div class="menu-item-info-top-phone">
+                                <img src="images/Group.png" alt="" class="menu-item-info-top-img">
+                                <p class="menu-item-info-top-text">
+                                    8(111)222-33-44
+                                </p>
+                            </div>
+                            <div class="menu-item-info-top-clock">
+                                <img src="images/Frame.png" alt="" class="menu-item-info-top-img">
+                                <p class="menu-item-info-top-text">
+                                    Пн-Пт 10:00-18:00
+                                </p>
+                            </div>
+                            <div class="menu-item-info-top-mail">
+                                <img src="images/mail.png" alt="" class="menu-item-info-top-img">
+                                <p class="menu-item-info-top-text">
+                                    ordr@buhone.ru
+                                </p>
+                            </div>
+                            <div class="menu-item-info-top-place">
+                                <img src="images/placeholder.png" alt="" class="menu-item-info-top-img">
+                                <p class="menu-item-info-top-text">
+                                    Невский пр. 130
+                                </p>
+                            </div>
+                        </div>
+                        <div class="menu-item-info-bottom">
+                            <ul>
+                                <li><a href="#">ГЛАВНАЯ</a></li>
+                                <li><a href="#">УСЛУГИ</a></li>
+                                <li><a href="#">КЕЙСЫ</a></li>
+                                <li><a href="#">О КОМПАНИИ</a></li>
+                                <li><a href="#">КОНТАКТЫ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="accountant">
+        <div class="container">
+            <div class="row flex-column">
+                <div class="accountant-slide">
+                    <p class="accountant-title">Бухгалтерские услуги в Санкт-Петербурге</p>
+                    <button class="accountant-button">Наша презентация</button>
+                </div>
+
+                <div class="accountant-slide" style="display: none;">
+                    <p class="accountant-title">Второй услуги в Санкт-Петербурге</p>
+                    <button class="accountant-button">Наша презентация</button>
+                </div>
+
+                <div class="accountant-slide" style="display: none;">
+                    <p class="accountant-title">Третий услуги в Санкт-Петербурге</p>
+                    <button class="accountant-button">Наша презентация</button>
+                </div>
+
+                <div class="accountant-slide" style="display: none;">
+                    <p class="accountant-title">Четвёртый услуги в Санкт-Петербурге</p>
+                    <button class="accountant-button">Наша презентация</button>
+                </div>
+
+                <div class="accountant-slider-control">
+                    <div class="accountant-slider-dots">
+                        <span class="accountant-slider-dots_item" onclick="currentSlide(1, 'accountant')"></span>
+                        <span class="accountant-slider-dots_item" onclick="currentSlide(2, 'accountant')"></span>
+                        <span class="accountant-slider-dots_item" onclick="currentSlide(3, 'accountant')"></span>
+                        <span class="accountant-slider-dots_item" onclick="currentSlide(4, 'accountant')"></span>
+                    </div>
+                    <div class="accountant-slider-button">
+                        <a class="accountant-prev-slide" onclick="minusSlide('accountant')"><img src="images/back.png" alt="" style="transform: rotate(180deg);"></a>
+                        <a class="accountant-next-slide" onclick="plusSlide('accountant')"><img src="images/back.png" alt=""></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="services">
+        <div class="container">
+            <div class="row flex-column">
+                <p class="services-under">Наши услуги</p>
+                <p class="services-title">Мы специализируемся</p>
+                <div class="services-row">
+                    <div class="services-item">
+                        <p class="services-item-text">Бухгалтерское обслуживание</p>
+                    </div>
+                    <div class="services-item">
+                        <p class="services-item-text">Бухгалтерское обслуживание</p>
+                    </div>
+                    <div class="services-item">
+                        <p class="services-item-text">Бухгалтерское обслуживание</p>
+                    </div>
+                    <div class="services-item">
+                        <p class="services-item-text">Бухгалтерское обслуживание</p>
+                    </div>
+                    <div class="services-item">
+                        <p class="services-item-text">Бухгалтерское обслуживание</p>
+                    </div>
+                    <div class="services-item">
+                        <p class="services-item-text">Бухгалтерское обслуживание</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="thank">
+        <div class="container">
+            <div class="row flex-column">
+                <p class="thank-under">Отзывы</p>
+                <p class="thank-title">Ваши благодарности</p>
+
+                <div class="slider">
+                    <div class="thank-slide">
+                        <p class="thank-slide-text">Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. </p>
+                        <div class="thank-slide-about">
+                            <img src="images/Ellipse.png" alt="" class="thank-slide-about-img">
+                            <div>
+                                <p class="thank-slide-about-title">Екатерина Иванова</p>
+                                <p class="thank-slide-about-text">Директор ООО “Раз-два”</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="thank-slide" style="display: none;">
+                        <p class="thank-slide-text">Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. </p>
+                        <div class="thank-slide-about">
+                            <img src="images/Ellipse.png" alt="" class="thank-slide-about-img">
+                            <div>
+                                <p class="thank-slide-about-title">Варвара</p>
+                                <p class="thank-slide-about-text">Директор ООО “Раз-два”</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="thank-slide" style="display: none;">
+                        <p class="thank-slide-text">Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. </p>
+                        <div class="thank-slide-about">
+                            <img src="images/Ellipse.png" alt="" class="thank-slide-about-img">
+                            <div>
+                                <p class="thank-slide-about-title">Марина</p>
+                                <p class="thank-slide-about-text">Директор ООО “Раз-два”</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="thank-slide" style="display: none;">
+                        <p class="thank-slide-text">Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. </p>
+                        <div class="thank-slide-about">
+                            <img src="images/Ellipse.png" alt="" class="thank-slide-about-img">
+                            <div>
+                                <p class="thank-slide-about-title">Владлена</p>
+                                <p class="thank-slide-about-text">Директор ООО “Раз-два”</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="thank-slider-control">
+                    <div class="slider-dots">
+                        <span class="slider-dots_item" onclick="currentSlide(1, 'thank')"></span>
+                        <span class="slider-dots_item" onclick="currentSlide(2, 'thank')"></span>
+                        <span class="slider-dots_item" onclick="currentSlide(3, 'thank')"></span>
+                        <span class="slider-dots_item" onclick="currentSlide(4, 'thank')"></span>
+                    </div>
+                    <div class="thank-slider-button">
+                        <a class="thank-prev-slide" onclick="minusSlide('thank')"><img src="images/back.png" alt="" style="transform: rotate(180deg);"></a>
+                        <a class="thank-next-slide" onclick="plusSlide('thank')"><img src="images/back.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="connection">
+        <div class="container">
+            <div class="row">
+                <div class="connection-item col-xl-5 col-lg-5 col-md-7 col-sm-11 col-xs-12">
+                    <p class="connection-item-title">Связь с нами</p>
+                    <p class="connection-item-under">У вас остались вопросы? Напишите нам - мы ответим в ближайшее время!</p>
+                    <div class="connection-item-about">
+                        <div class="connection-item-about-back">
+                            <img src="images/phoneWhite.png" alt="">
+                            <p>+7 (111) 222-33-44</p>
+                        </div>
+                        <div class="connection-item-about-back">
+                            <img src="images/mailWhite.png" alt="">
+                            <p>order@bu-one.ru</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="connection-form col-xl-5 col-lg-5 col-md-7 col-sm-11 col-xs-12" method="POST">
+                    <form action="">
+                        <div class="col-xl-5 col-lg-5 connection-form-margin-name">
+                            <label class="connection-form-label">Имя</label><br>
+                            <input type="text" name="name" class="connection-form-input" placeholder="Иван">
+                        </div>
+                        <div class="col-xl-5 col-lg-5">
+                            <label class="connection-form-label">Фамилия</label><br>
+                            <input type="text" name="surname" class="connection-form-input" placeholder="Иванов">
+                        </div>
+                        <div class="col-xl-11 col-lg-11" style="padding-top: 50px;">
+                            <label class="connection-form-label">Сообщения</label><br>
+                            <textarea name="text" id="" cols="30" rows="10" class="connection-form-text" placeholder="Ваше Сообщение"></textarea>
+                        </div>
+                    </form>
+                    <button class="connection-form-button">Отправить сообщение</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="js/script.js"></script>
+</body>
+</html>
