@@ -1,38 +1,9 @@
 <template>
     <div>
-        <md-table>
-            <md-table-row>
-                <md-table-head md-numeric>ID</md-table-head>
-                <md-table-head>Name</md-table-head>
-                <md-table-head>Email</md-table-head>
-                <md-table-head>Gender</md-table-head>
-                <md-table-head>Job Title</md-table-head>
-            </md-table-row>
-
-            <md-table-row>
-                <md-table-cell md-numeric>1</md-table-cell>
-                <md-table-cell>Shawna Dubbin</md-table-cell>
-                <md-table-cell>sdubbin0@geocities.com</md-table-cell>
-                <md-table-cell>Male</md-table-cell>
-                <md-table-cell>Assistant Media Planner</md-table-cell>
-            </md-table-row>
-
-            <md-table-row>
-                <md-table-cell md-numeric>2</md-table-cell>
-                <md-table-cell>Odette Demageard</md-table-cell>
-                <md-table-cell>odemageard1@spotify.com</md-table-cell>
-                <md-table-cell>Female</md-table-cell>
-                <md-table-cell>Account Coordinator</md-table-cell>
-            </md-table-row>
-
-            <md-table-row>
-                <md-table-cell md-numeric>3</md-table-cell>
-                <md-table-cell>Vera Taleworth</md-table-cell>
-                <md-table-cell>vtaleworth2@google.ca</md-table-cell>
-                <md-table-cell>Male</md-table-cell>
-                <md-table-cell>Community Outreach Specialist</md-table-cell>
-            </md-table-row>
-        </md-table>
+        <div v-for="(location, index) in locations" :key="index">
+            <img :src="location.images" style="width: 300px;" />
+            <h1>{{ location.name }}</h1>
+        </div>
         <div class="paginationBtn">
             <span v-on:click="previousPage()">left</span>
             <span v-on:click="nextPage()">right</span>
@@ -41,15 +12,34 @@
 </template>
 
 <script>
+    import { db } from "../main";
     export default {
         name: "TodoList",
+        data() {
+            return {
+                locations: []
+            };
+        },
+        firestore() {
+            store.commit(db.collection("location").orderBy("createdAt"));
+            return {
+                locations: db.collection("location").orderBy("createdAt")
+            };
+        },
         methods: {
-            previousPage: function() {
+            previousPage() {
                 console.log('previousPage');
             },
-            nextPage: function() {
+            nextPage() {
                 console.log('nextPage');
-            }
+            },
+        },
+        beforeMount() {
+            store.commit(db.collection("location").orderBy("createdAt"));
+        },
+        created() {
+            console.log(store.state);
+            console.log(this.locations);
         }
     }
 </script>

@@ -3,13 +3,13 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import { firestorePlugin } from "vuefire";
-import VueMaterial from "vue-material";
-import "vue-material/dist/vue-material.min.css";
-import 'vue-material/dist/theme/default.css'
 import firebase from "firebase";
 
+import Vuetify from "vuetify";
+import "vuetify/dist/vuetify.min.css";
+
+Vue.use(Vuetify);
 Vue.use(firestorePlugin);
-Vue.use(VueMaterial);
 Vue.config.productionTip = false;
 
 firebase.initializeApp({
