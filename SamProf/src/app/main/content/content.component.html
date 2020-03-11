@@ -1,0 +1,68 @@
+<section class="data-pation">
+  <div>
+    <div class="pation-element">
+      <div class="inner-element">
+        <span>Pat ID</span>
+        <input class="input-element" [(ngModel)]="patient.id" type="text" placeholder="Enter Patient ID">
+      </div>
+    </div>
+    <div class="pation-element">
+      <div class="inner-element">
+        <span>Name</span>
+        <input class="input-element" [(ngModel)]="patient.name" type="text" placeholder="Enter Name">
+      </div>
+    </div>
+    <div class="pation-element">
+      <div class="inner-element">
+        <span>Sex</span>
+        <select class="input-element" [(ngModel)]="patient.sex" (change)="changeDataForCalculate()">
+          <option *ngFor="let sex of patientSex" [value]="sex.id">
+            {{sex.name}}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div class="pation-element">
+      <div class="inner-element">
+      <span>Birth</span>
+        <input class="input-element" type="date" [value]="patient.birthday" [(ngModel)]="patient.birthday">
+      </div>
+    </div>
+  </div>
+  <div class="pation-element">
+    <div class="inner-element">
+      <span>Depart. ID</span>
+      <select class="input-element" [(ngModel)]="patient.departamentId" (change)="changeDataForCalculate()">
+        <option *ngFor="let department of departments" [value]="department.id">
+          {{department.name}}
+        </option>
+      </select>
+    </div>
+  </div>
+</section>
+<section class="data-diagnoses">
+  <div class="diagnoses">
+    <div class="diagnos" *ngFor="let diagnos of patient.diagnoses">
+      <div class="green" [style.opacity]="!diagnos.used ? '0' : '1'"></div>
+      <input type="checkbox" (change)="changeDataForCalculate()" [(ngModel)]="diagnos['used']">{{diagnos.name}}
+      <div class="dropdown" style="float: right;">
+        <button class="dropbtn">&#9881;</button>
+        <div class="dropdown-content">
+          <a href="#" (click)="deleteDiagnos(diagnos)">Удалить</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="procedures">
+    <div class="procedure" *ngFor="let procedure of patient.procedures">
+      <input type="checkbox" (change)="changeDataForCalculate()" [(ngModel)]="procedure['used']">
+      {{procedure.name}}
+      <span *ngIf="procedure.diagnosId !== null" class="diagnosNumber">{{diagnosNumber(procedure).name}}</span>
+    </div>
+  </div>
+</section>
+<section class="data-result">
+  <div><span class="result">MDC</span><strong>{{calculatePatient.mdc}}</strong></div>
+  <div><span class="result">DRG</span><strong>{{calculatePatient.drg}}</strong></div>
+  <div><span class="result">Entgelt</span><strong>{{calculatePatient.entgelt}} &euro;</strong></div>
+</section>
